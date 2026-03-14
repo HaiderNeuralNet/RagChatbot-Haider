@@ -66,8 +66,8 @@ ragchat/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ragchat.git
-cd ragchat
+git clone https://github.com/HaiderNeuralNet/RagChatbot-Haider.git
+cd RagChatbot-Haider 
 ```
 
 ### 2. Install dependencies
@@ -93,7 +93,7 @@ SYSTEM_PROMPT=You are a helpful assistant.
 
 Get a free Groq API key at: **https://console.groq.com**
 
-### 4. Update personal memory (optional)
+### 4. Update personal memory 
 
 Edit `memory.json` to tell the AI who you are:
 
