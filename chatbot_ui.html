@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -736,7 +736,8 @@
                     chatList.innerHTML = '<div id="no-sessions">No conversations yet.<br/>Start chatting!</div>';
                     return;
                 }
-                sessions.reverse().forEach(s => chatList.appendChild(buildSessionItem(s)));
+                // Backend already returns newest-first; do NOT reverse again
+                sessions.forEach(s => chatList.appendChild(buildSessionItem(s)));
             } catch (e) { console.log('Sessions load failed:', e); }
         }
 
@@ -809,9 +810,17 @@
         async function send() {
             const msg = inputEl.value.trim();
             if (!msg || sendBtn.disabled) return;
-            if (sessionTitle === 'New conversation') {
+            const isNewSession = sessionTitle === 'New conversation';
+            if (isNewSession) {
                 sessionTitle = msg.substring(0, 40) + (msg.length > 40 ? '...' : '');
                 topbarTitle.textContent = sessionTitle;
+                // Instantly add to sidebar without waiting for server round-trip
+                const noSess = document.getElementById('no-sessions');
+                if (noSess) noSess.remove();
+                const newItem = buildSessionItem({ session_id: SESSION, title: sessionTitle, count: 1 });
+                chatList.insertBefore(newItem, chatList.firstChild);
+                document.querySelectorAll('.chat-item').forEach(el =>
+                    el.classList.toggle('active', el.dataset.id === SESSION));
             }
             inputEl.value = '';
             autoResize();
@@ -832,6 +841,7 @@
                 }
                 const data = await res.json();
                 addMsg('bot', data.reply);
+                // Refresh sidebar to sync accurate titles/counts from server
                 loadSessions();
             } catch (e) {
                 typingEl.style.display = 'none';
