@@ -43,12 +43,12 @@
 ╔══════════════════════════════════════════════════════════════╗
 ║  🤖 Haider AI        │  Haider Assistant                     ║
 ║                      │                                        ║
-║  + New conversation  │  ┌─────────────────────────────────┐  ║
+║  + New conversation  │  ┌─────────────────────────────────┐   ║
 ║                      │  │ AI: Hello! I am Haider           │  ║
 ║  RECENT CHATS        │  │     Assistant. Ask me anything.  │  ║
 ║  ▶ What is Python?   │  └─────────────────────────────────┘  ║
-║  ▶ Explain FastAPI   │                                        ║
-║  ▶ DSA lecture notes │         ┌──────────────────┐          ║
+║  ▶ Explain FastAPI   │                                       ║
+║                      │         ┌──────────────────┐          ║
 ║                      │         │ You: Hello!      │          ║
 ║                      │         └──────────────────┘          ║
 ║                      │  ┌─────────────────────────────────┐  ║
