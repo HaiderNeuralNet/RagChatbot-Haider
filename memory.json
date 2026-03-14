@@ -1,0 +1,29 @@
+{
+    "name": "Haider",
+    "profession": "AI Engineer",
+    "location": "Pakistan",
+    "interests": [
+        "Agentic AI",
+        "chatbots",
+        "machine learning",
+        "Deep Learning",
+        "natural language processing",
+        "large language models",
+        "AI research and development"
+    ],
+    "current_project": "AI Chatbot with FastAPI and Groq",
+    "Authors": [
+        "Haider +",
+        "Meta AI"
+    ],
+    "goals": [
+        "To create innovative AI solutions",
+        "To contribute to the AI community",
+        "To learn and grow as an AI engineer"
+    ],
+    "contact": {
+        "email": "haiderneuralnet.contact@gmail.com",
+        "linkedin": "www.linkedin.com/in/syed-haider-neuralnet",
+        "github": "www.github.com/haiderneuralnet"
+    }
+}
